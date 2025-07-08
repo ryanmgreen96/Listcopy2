@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Note Taking App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+    <div id="app">
+        <div id="titles-container">
+            <button class="tab-title" data-tab="Create">Create</button>
+            <button class="tab-title" data-tab="Work">Work</button>
+            <button class="tab-title" data-tab="Health">Health</button>
+            <button class="tab-title" data-tab="Chores">Chores</button>
+        </div>
+
+        <div id="content-container"></div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDRjW-jf0o7DG2x9iKXjotuUdsQ4qvSPnw",
+            authDomain: "lists-a4143.firebaseapp.com",
+            projectId: "lists-a4143",
+            storageBucket: "lists-a4143.firebasestorage.app",
+            messagingSenderId: "429774215962",
+            appId: "1:429774215962:web:a54dd9dc02939d57ba2aa3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.firestoreDB = db;
+        window.firestoreFunctions = { doc, getDoc, setDoc };
+    </script>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

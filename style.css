@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Centaur';
+    src: url('Centaur.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #782626;
+    color: #d4af37;
+    font-family: 'Centaur', serif;
+    margin: 0;
+    padding: .5em 0;
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    width: 900px;
+    max-width: 95vw;
+}
+
+#titles-container {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.tab-title {
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 1.2em;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 4px;
+        padding: 0.2em 0.6em;
+        font-family:'Times New Roman', Times, serif
+}
+
+.tab-title.active {
+    color: #fff8dc;
+}
+
+#content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    
+}
+
+.task-item,
+.note-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    
+}
+
+.task-item .item-text,
+.note-item .item-text {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #dbcb98;
+    font-size: 1.1em;
+}
+
+.task-item .item-checkbox {
+    width: 0.4em;
+        height: 0.4em;
+    border: 2px solid #d4af37;
+    cursor: pointer;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 1.5em;
+    cursor: pointer;
+    user-select: none;
+
+    display: block;       /* Make them block elements */
+    text-align: left;     /* Align content left */
+    margin: 0;            /* Remove any default margin */
+    padding: 0;  
+}
+
+@media (max-width: 800px) {
+    .tab-title {
+        font-size: 0.9em;
+    }
+}
